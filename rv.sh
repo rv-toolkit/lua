@@ -11,7 +11,7 @@ tar -xzf $tar_tests
 json_out=my_errors.json
 compiler=kcc
 reportflag="CFLAGS=-fissue-report=$json_out"
-sudo make -j`nproc` linux CC=$compiler LD=$compiler $reportflag 
+sudo make -j`nproc` CC=$compiler LD=$compiler $reportflag 
 
 cd lua-$VERSION-tests/
 ../lua all.lua
