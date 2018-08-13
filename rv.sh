@@ -10,13 +10,15 @@ tar_tests=lua-$VERSION-tests.tar.gz
 wget https://www.lua.org/tests/$tar_tests
 tar -xzf $tar_tests
 
-json_out=my_errors.json
+json_out=`pwd`/my_errors.json
 compiler=kcc
 reportflag="CFLAGS=-fissue-report=$json_out"
 sudo make -j`nproc` CC=$compiler LD=$compiler $reportflag 
 
+(
 cd lua-$VERSION-tests/
 ../lua all.lua
+)
 
 ls -la
 wc -l my_errors.json
