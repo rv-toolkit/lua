@@ -17,7 +17,7 @@ sudo make -j`nproc` CC=$compiler LD=$compiler $reportflag
 
 (
 cd lua-$VERSION-tests/
-../lua all.lua
+../lua api.lua
 )
 
 ls -la
