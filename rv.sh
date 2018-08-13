@@ -16,7 +16,7 @@ reportflag="CFLAGS=-fissue-report=$json_out"
 sudo make -j`nproc` CC=$compiler LD=$compiler $reportflag 
 ls -la
 
-../lua -e "print(\"Hello, World!\")"
+`pwd`/lua -e "print(\"Hello, World!\")"
 
 (
 cd lua-$VERSION-tests/
