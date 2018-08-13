@@ -1,6 +1,6 @@
 #!/bin/sh
 set -x
-set -e
+
 # This is running under Ubuntu 16.04
 # Install necessary packages. 
 sudo apt-get install -y libreadline-dev
@@ -14,7 +14,6 @@ json_out=`pwd`/my_errors.json
 compiler=kcc
 reportflag="CFLAGS=-fissue-report=$json_out"
 sudo make -j`nproc` CC=$compiler LD=$compiler $reportflag 
-ls -la
 
 `pwd`/lua -e "print(\"Hello, World!\")"
 
