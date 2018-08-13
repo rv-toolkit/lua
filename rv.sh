@@ -6,7 +6,7 @@ sudo apt-get install -y libreadline-dev
 VERSION=5.3.4
 tar_tests=lua-$VERSION-tests.tar.gz
 wget https://www.lua.org/tests/$tar_tests
-tar -xvz $tar_tests
+tar -xzf $tar_tests
 
 json_out=my_errors.json
 compiler=kcc
