@@ -14,10 +14,11 @@ json_out=`pwd`/my_errors.json
 compiler=kcc
 reportflag="CFLAGS=-fissue-report=$json_out"
 sudo make -j`nproc` CC=$compiler LD=$compiler $reportflag 
+ls -la 
 
 (
 cd lua-$VERSION-tests/
-../lua api.lua
+../lua big.lua
 )
 
 ls -la
