@@ -1,4 +1,6 @@
 #!/bin/sh
+set +x
+set +e
 # This is running under Ubuntu 16.04
 # Install necessary packages. 
 sudo apt-get install -y libreadline-dev
@@ -15,6 +17,9 @@ sudo make -j`nproc` CC=$compiler LD=$compiler $reportflag
 
 cd lua-$VERSION-tests/
 ../lua all.lua
+
+ls -la
+wc -l my_errors.json
 
 # Generate a HTML report with `rv-html-report` command,
 # and output the HTML report to `./report` directory. 
