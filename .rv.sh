@@ -6,7 +6,8 @@ report_out=`pwd`/report
 
 # This is running under Ubuntu 16.04
 # Install necessary packages. 
-apt install -y libreadline-dev
+sudo apt update
+sudo apt install -y libreadline-dev
 
 # Compile and run `lua`.
 compiler=kcc
